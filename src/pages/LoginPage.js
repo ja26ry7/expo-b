@@ -13,6 +13,7 @@ import { Avatar } from 'react-native-elements';
 import { AppContext } from '../AppContext';
 import AppBar from '../components/AppBar';
 import Button from '../components/Button'
+import TextInputEx from '../components/TextInputEx'
 
 export default () => {
     const appCtx = useContext(AppContext);
@@ -75,6 +76,7 @@ export default () => {
                 onSubmit={values => {
                     appCtx.login(values.account, values.password)
                 }}
+                
             >
                 {({ handleChange, handleBlur, handleSubmit, values }) => (
                     <>
@@ -87,6 +89,8 @@ export default () => {
                                 uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
                             }}
                         />
+
+
 
                         <TextInput
                             style={{ marginHorizontal: 20, backgroundColor: 'white' }}

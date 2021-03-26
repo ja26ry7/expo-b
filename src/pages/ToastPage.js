@@ -15,11 +15,35 @@ export default () => {
     const navigation = useNavigation();
     const [visible, setVisible] = useState(false);
 
-    const componentDidMount = () => {
-        setTimeout(() => setVisible(true), 2000); // show toast after 2s
+    const abc = () => {
+        Toast.show('This is a message', {
+            duration: Toast.durations.LONG,
+            position: Toast.positions.BOTTOM,
+            shadow: true,
+            animation: true,
+            hideOnPress: true,
+            delay: 100,
+            onShow: () => {
+                // calls on toast\`s appear animation start
+            },
+            onShown: () => {
+                // calls on toast\`s appear animation end.
+            },
+            onHide: () => {
+                // calls on toast\`s hide animation start.
+            },
+            onHidden: () => {
+                // calls on toast\`s hide animation end.
+            }
+        });
 
-        setTimeout(() => setVisible(false), 5000); // hide toast after 5s
+
     };
+
+
+
+
+
 
     return (
         <>
@@ -28,16 +52,16 @@ export default () => {
                     <Icon name="FontAwesome/angle-left" size={30} color="white" />
                 </TouchableOpacity>} />
             <ScrollView style={{ padding: 14 }} >
-                <Button title='Toast1' bgColor='darkblue' onPress={() => componentDidMount()} />
-                <Button title='Toast2' bgColor='darkblue' onPress={() => componentDidMount()} />
+                <Button title='Toast1' bgColor='darkblue' onPress={() => abc} />
+                {/* <Button title='Toast2' bgColor='darkblue' onPress={() => componentDidMount()} /> */}
 
-                <Toast
+                {/* <Toast
                     visible={visible}
-                    position={50}
-                    shadow
-                    animation
-                    hideOnPress
-                >This is toast</Toast>
+                    position={100}
+                    shadow={false}
+                    animation={false}
+                    hideOnPress={true}
+                >This is toast</Toast> */}
             </ScrollView>
         </>
     );
