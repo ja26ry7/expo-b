@@ -37,6 +37,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>App 需要選擇照片或拍照,需要您的同意, 才能啟動相機或相簿</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>App 需要選擇照片或拍照,需要您的同意, 才能啟動相機或相簿</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App 需要選擇照片或拍照,需要您的同意, 才能啟動相機或相簿</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow $(PRODUCT_NAME) to use the camera</string>
 	<key>NSFaceIDUsageDescription</key>
