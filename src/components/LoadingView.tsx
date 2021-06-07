@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Modal, ActivityIndicator, StyleSheet } from "react-native";
+import { View, Modal, ActivityIndicator, StyleSheet, Text } from "react-native";
 
-// export interface LoadingViewProps {
-//     visible: boolean;
-// }
+export interface LoadingViewProps {
+  visible: boolean;
+}
 
-export const LoadingView = (visible: boolean) => {
+export const LoadingView = ({ visible }: LoadingViewProps) => {
   return (
     <Modal
       animationType="fade"
@@ -15,7 +15,8 @@ export const LoadingView = (visible: boolean) => {
     >
       <View style={styles.backdrop}>
         <View style={styles.container}>
-          <ActivityIndicator color="#E800E8" />
+          <ActivityIndicator style={styles.activity} />
+          <Text>載入中...</Text>
         </View>
       </View>
     </Modal>
@@ -35,5 +36,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 30,
     borderRadius: 15,
+  },
+  activity: {
+    color: "#6F00D2",
+    paddingBottom: 10,
   },
 });

@@ -1,13 +1,12 @@
-import React, { useState, useCallback } from 'react';
-import {
-  TouchableOpacity,
-  ScrollView, View, Text
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import DraggableFlatList, { RenderItemParams } from 'react-native-draggable-flatlist';
-import AppBar from '../components/AppBar';
-import Icon from '../components/Icon';
-import ACard from '../components/ACard';
+import React, { useState, useCallback } from "react";
+import { TouchableOpacity, ScrollView, View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import DraggableFlatList, {
+  RenderItemParams,
+} from "react-native-draggable-flatlist";
+import AppBar from "../components/AppBar";
+import Icon from "../components/Icon";
+import ACard from "../components/ACard";
 
 const NUM_ITEMS = 10;
 
@@ -32,7 +31,6 @@ type Item = {
   backgroundColor: string;
 };
 
-
 export default () => {
   const navigation = useNavigation();
   const [data, setData] = useState(exampleData);
@@ -43,17 +41,19 @@ export default () => {
         <TouchableOpacity
           style={{
             height: 100,
-            backgroundColor: isActive ? 'red' : item.backgroundColor,
-            alignItems: 'center',
-            justifyContent: 'center',
+            backgroundColor: isActive ? "red" : item.backgroundColor,
+            alignItems: "center",
+            justifyContent: "center",
           }}
-          onLongPress={drag}>
+          onLongPress={drag}
+        >
           <Text
             style={{
-              fontWeight: 'bold',
-              color: 'white',
+              fontWeight: "bold",
+              color: "white",
               fontSize: 32,
-            }}>
+            }}
+          >
             {item.label}
           </Text>
         </TouchableOpacity>
@@ -64,10 +64,24 @@ export default () => {
 
   return (
     <>
-      <AppBar title="ActionSheet" left={
-        <TouchableOpacity style={{ marginRight: 20 }} onPress={() => navigation.goBack()} >
-          <Icon name="FontAwesome/angle-left" size={30} color="white" style={{}} />
-        </TouchableOpacity>} right={{}} barColor='' />
+      <AppBar
+        title="ActionSheet"
+        left={
+          <TouchableOpacity
+            style={{ marginRight: 20 }}
+            onPress={() => navigation.goBack()}
+          >
+            <Icon
+              name="FontAwesome/angle-left"
+              size={30}
+              color="white"
+              style={{}}
+            />
+          </TouchableOpacity>
+        }
+        right={{}}
+        barColor=""
+      />
       <DraggableFlatList
         data={data}
         renderItem={renderItem}
@@ -76,4 +90,4 @@ export default () => {
       />
     </>
   );
-}
+};
