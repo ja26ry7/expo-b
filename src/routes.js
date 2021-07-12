@@ -34,18 +34,33 @@ const signInPage = [
     name: "draggableflatList",
     component: require("./pages/DraggableFlatList").default,
   },
-  //   {
-  //     name: "listTest",
-  //     component: require("./pages/ListTest").default,
-  //   },
+  {
+    name: "list",
+    component: require("./pages/ListTest").default,
+  },
+  {
+    name: "picker",
+    component: require("./pages/DropdownPicker").default,
+  },
+  {
+    name: "systempage",
+    component: require("./pages/SystemPage").default,
+  },
+  {
+    name: "flash",
+    component: require("./pages/FlashMessage").default,
+  },
   {
     name: "toast",
     component: require("./pages/ToastPage").default,
   },
-
   {
-    name: "systempage",
-    component: require("./pages/SystemPage").default,
+    name: "progress",
+    component: require("./pages/ProgressPage").default,
+  },
+  {
+    name: "imgProgress",
+    component: require("./pages/ImageProgress").default,
   },
 ];
 

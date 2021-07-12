@@ -1,19 +1,6 @@
 import React, { useState } from "react";
-import {
-  Button,
-  StyleSheet,
-  Text,
-  View,
-  Alert,
-  Dimensions,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
-import {
-  useNavigation,
-  useRoute,
-  useFocusEffect,
-} from "@react-navigation/native";
+import { TouchableOpacity, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { ButtonGroup } from "react-native-elements";
 import AppBar from "../components/AppBar";
 import Icon from "../components/Icon";
@@ -36,7 +23,7 @@ export default () => {
           </TouchableOpacity>
         }
       />
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1, paddingHorizontal: 20 }}>
         <ButtonGroup
           onPress={(value) => setSelectedIndex(value)}
           selectedIndex={selectedIndex}

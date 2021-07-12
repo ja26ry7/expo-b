@@ -12,6 +12,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import FlashMessage, {
+  showMessage,
+  hideMessage,
+} from "react-native-flash-message";
+import { RootSiblingParent } from "react-native-root-siblings";
 
 import { AppProvider, AppContext } from "./AppContext";
 import { unsignInPage, signInPage } from "./routes";
@@ -102,7 +107,10 @@ const App = () => {
           style={{ flex: 1 }}
           behavior={Platform.OS === "ios" ? "padding" : undefined}
         >
-          <LaunchPage />
+          <RootSiblingParent>
+            <LaunchPage />
+            <FlashMessage position="top" />
+          </RootSiblingParent>
         </KeyboardAvoidingView>
         {/* </SafeAreaView> */}
       </AppProvider>

@@ -65,7 +65,7 @@ export default () => {
   return (
     <>
       <AppBar
-        title="ActionSheet"
+        title="可滑動清單"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}

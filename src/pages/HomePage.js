@@ -6,6 +6,7 @@ import {
   View,
   Alert,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import {
   useNavigation,
@@ -51,31 +52,30 @@ export default () => {
           </TouchableOpacity>
         }
       />
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "white",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <ImageBackground
+        source={require("../assets/starSky.jpeg")}
+        style={{ flex: 1 }}
       >
-        <Swiper
-          style={styles.wrapper}
-          // showsButtons={true}
-          autoplay={true}
-          autoplayTimeout={5}
+        <View
+          style={{
+            height: 300,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <View style={styles.slide1}>
-            <Text style={styles.text}>Hello Swiper</Text>
-          </View>
-          <View style={styles.slide2}>
-            <Text style={styles.text}>Beautiful</Text>
-          </View>
-          <View style={styles.slide3}>
-            <Text style={styles.text}>And simple</Text>
-          </View>
-        </Swiper>
-      </View>
+          <Swiper showsButtons={true} autoplay={true} autoplayTimeout={50}>
+            <View style={styles.slide1}>
+              <Text style={styles.text}>Hello Swiper</Text>
+            </View>
+            <View style={styles.slide2}>
+              <Text style={styles.text}>Beautiful</Text>
+            </View>
+            <View style={styles.slide3}>
+              <Text style={styles.text}>And simple</Text>
+            </View>
+          </Swiper>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -85,19 +85,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#9DD6EB",
+    // backgroundColor: "#9DD6EB",
   },
   slide2: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#97CAE5",
+    // backgroundColor: "#97CAE5",
   },
   slide3: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#92BBD9",
+    // backgroundColor: "#92BBD9",
   },
   text: {
     color: "#fff",

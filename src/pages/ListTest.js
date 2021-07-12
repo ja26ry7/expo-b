@@ -38,7 +38,7 @@ export default () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get("https://randomuser.me/api/?results=10");
-      console.log("list res", response);
+      console.log("list res", JSON.stringify(response));
       setUsers(response.data.results);
     })();
   }, []);

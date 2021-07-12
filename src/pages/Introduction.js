@@ -7,52 +7,6 @@ import { Avatar, Badge, withBadge } from "react-native-elements";
 import ImagePicker from "react-native-image-crop-picker";
 import BottomSheet from "react-native-bottomsheet";
 
-const onAvatar = () => {
-  BottomSheet.showBottomSheetWithOptions(
-    {
-      options: ["拍照", "從圖庫選擇", "取消"],
-      title: "請選擇更改方式",
-      dark: true,
-      cancelButtonIndex: 2,
-    },
-    (value) => {
-      if (value === 0) {
-        ImagePicker.openCamera({
-          width: 300,
-          height: 300,
-          cropping: true,
-          cropperCircleOverlay: true,
-          multiple: true,
-        })
-          .then((image) => {
-            console.log(image);
-          })
-          .catch((e) => {
-            if (e.code !== "E_PICKER_CANCELLED") {
-              console.log(e);
-            }
-          });
-      } else if (value === 1) {
-        ImagePicker.openPicker({
-          width: 300,
-          height: 300,
-          cropping: true,
-          cropperCircleOverlay: true,
-          multiple: true,
-        })
-          .then((image) => {
-            console.log(image);
-          })
-          .catch((e) => {
-            if (e.code !== "E_PICKER_CANCELLED") {
-              console.log(e);
-            }
-          });
-      }
-    }
-  );
-};
-
 export default () => {
   const navigation = useNavigation();
   const [selfInfo, setSelfInfo] = useState({
@@ -60,8 +14,56 @@ export default () => {
     account: "joybeta2",
     uid: "1234687964984985wdwf",
   });
+  const [imageUri, setImageUri] = React.useState(
+    "https://img.hypesphere.com/2015-10-22-174039-60.jpg"
+  );
 
   let name = selfInfo.name.substr(0, 1);
+
+  const onAvatar = () => {
+    BottomSheet.showBottomSheetWithOptions(
+      {
+        options: ["拍照", "從圖庫選擇", "取消"],
+        title: "請選擇更改方式",
+        dark: true,
+        cancelButtonIndex: 2,
+      },
+      async (value) => {
+        if (value === 0) {
+          try {
+            const image = await ImagePicker.openCamera({
+              width: 300,
+              height: 300,
+              cropping: true,
+              cropperCircleOverlay: true,
+            });
+            console.log(image);
+            setImageUri(image.path);
+          } catch (e) {
+            if (e.code !== "E_PICKER_CANCELLED") {
+              console.log(e);
+            }
+          }
+        } else if (value === 1) {
+          try {
+            const image = await ImagePicker.openPicker({
+              width: 300,
+              height: 300,
+              cropping: true,
+              cropperCircleOverlay: true,
+            });
+
+            console.log(image);
+            setImageUri(image.path);
+          } catch (e) {
+            if (e.code !== "E_PICKER_CANCELLED") {
+              console.log(e);
+            }
+          }
+        }
+      }
+    );
+  };
 
   return (
     <>
@@ -83,7 +85,7 @@ export default () => {
             size="xlarge"
             title={name}
             source={{
-              uri: "https://img.hypesphere.com/2015-10-22-174039-60.jpg",
+              uri: imageUri,
             }}
             titleStyle={{ color: "white" }}
             overlayContainerStyle={{ backgroundColor: "#ff9700" }}

@@ -15,7 +15,7 @@ const ListGroup = ({ items, header }) => (
         return (
           <>
             <SubComponents
-              key={i.toString()}
+              key={e + i.toString()}
               title={e.label}
               onPress={e.onPress}
             />

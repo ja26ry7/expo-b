@@ -40,9 +40,8 @@ export default () => {
     <Tab.Navigator
       initialRouteName="home"
       tabBarOptions={{
-        activeTintColor: "white",
+        activeTintColor: "blue",
         inactiveTintColor: "lightgray",
-        activeBackgroundColor: "blue",
         keyboardHidesTabBar: true,
         labelStyle: { paddingBottom: 3 },
       }}

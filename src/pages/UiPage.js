@@ -10,8 +10,6 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-import { DateTimePicker, Picker } from "react-native-ui-lib";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import { Provider as PaperProvider } from "react-native-paper";
 import { SearchBar } from "react-native-elements";
@@ -19,8 +17,8 @@ import { Searchbar } from "react-native-paper";
 import AppBar from "../components/AppBar";
 import Icon from "../components/Icon";
 import ACard from "../components/ACard";
-import SectionHeader from "../components/SectionHeader";
 import ListGroup from "../components/ListGroup";
+import ItemSection from "../items/ItemSection";
 
 export default () => {
   const navigation = useNavigation();
@@ -64,7 +62,9 @@ export default () => {
   );
 };
 
-const UiTab1 = () => {
+const UiTab1 = () => <ItemSection />;
+
+const UiTab2 = () => {
   const [searchText, setSearchText] = React.useState("");
   const [searchText1, setSearchText1] = React.useState("");
   const navigation = useNavigation();
@@ -82,9 +82,8 @@ const UiTab1 = () => {
         value={searchText1}
       />
       {/* <SectionHeader title='one' /> */}
-
-      <ListGroup
-        header="one"
+      {/* <ListGroup
+        header="一般"
         items={[
           {
             key: "introduction",
@@ -97,55 +96,9 @@ const UiTab1 = () => {
             onPress: () => navigation.navigate("dateandtime"),
           },
         ]}
-      />
-      <ListGroup
-        header="two"
-        items={[
-          {
-            key: "actionsheet",
-            label: "ActionSheet",
-            onPress: () => navigation.navigate("actionsheet"),
-          },
-          {
-            key: "bottomsheet",
-            label: "BottomSheet",
-            onPress: () => navigation.navigate("bottomsheet"),
-          },
-        ]}
-      />
-      <ListGroup
-        header="three"
-        items={[
-          {
-            key: "draggableflatList",
-            label: "可滑動清單",
-            onPress: () => navigation.navigate("draggableflatList"),
-          },
-          {
-            key: "list",
-            label: "列表",
-            onPress: () => navigation.navigate("list"),
-          },
-        ]}
-      />
-      <ListGroup
-        header="four"
-        items={[
-          {
-            key: "toast",
-            label: "Toast",
-            onPress: () => navigation.navigate("toast"),
-          },
-          { key: "toast2", label: "Toast2", onPress: () => {} },
-        ]}
-      />
+      /> */}
+      <ACard height={200} text="Happy New Year!" />
+      <ACard text="新年快樂！" />
     </ScrollView>
   );
 };
-
-const UiTab2 = () => (
-  <ScrollView style={{ padding: 14 }}>
-    <ACard height={200} text="Happy New Year!" />
-    <ACard text="新年快樂！" />
-  </ScrollView>
-);

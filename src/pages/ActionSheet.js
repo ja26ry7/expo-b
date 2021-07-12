@@ -51,11 +51,10 @@ export default () => {
                 message: "Simple share",
               },
               (value) => {
-                alert(value);
+                console.log(value);
               },
               (resultcode, path) => {
-                alert(resultcode);
-                alert(path);
+                console.log(resultcode, path);
               }
             );
           }}
