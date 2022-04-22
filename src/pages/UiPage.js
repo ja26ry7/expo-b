@@ -14,10 +14,8 @@ import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import { Provider as PaperProvider } from "react-native-paper";
 import { SearchBar } from "react-native-elements";
 import { Searchbar } from "react-native-paper";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
-import ACard from "../components/ACard";
-import ListGroup from "../components/ListGroup";
+
+import * as FF from "../components";
 import ItemSection from "../items/ItemSection";
 
 export default () => {
@@ -30,14 +28,14 @@ export default () => {
 
   return (
     <PaperProvider>
-      <AppBar
+      <FF.AppBar
         title="Uipage"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />
@@ -97,8 +95,8 @@ const UiTab2 = () => {
           },
         ]}
       /> */}
-      <ACard height={200} text="Happy New Year!" />
-      <ACard text="新年快樂！" />
+      <FF.ACard height={200} text="Happy New Year!" />
+      <FF.ACard text="新年快樂！" />
     </ScrollView>
   );
 };

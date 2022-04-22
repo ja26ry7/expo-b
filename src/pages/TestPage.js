@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ButtonGroup } from "react-native-elements";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
@@ -12,14 +11,14 @@ export default () => {
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="Test Page"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />

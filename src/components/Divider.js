@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 
-const Divider = ({ bgColor = "lightgray", length = "short" }) => (
+export const Divider = ({ bgColor = "lightgray", length = "short" }) => (
   <View
     style={{
       height: 1,
@@ -10,5 +10,3 @@ const Divider = ({ bgColor = "lightgray", length = "short" }) => (
     }}
   ></View>
 );
-
-export default Divider;

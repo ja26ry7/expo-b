@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from "react";
 import { TouchableOpacity, ScrollView, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
 import DropDownPicker from "react-native-dropdown-picker";
+
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
@@ -24,14 +24,14 @@ export default () => {
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="下拉式選單"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon
+            <FF.Icon
               name="FontAwesome/angle-left"
               size={30}
               color="white"

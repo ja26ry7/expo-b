@@ -1,13 +1,9 @@
 import React, { useState, useContext } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
-import SectionHeader from "../components/SectionHeader";
-import Button from "../components/Button";
 import { AppContext } from "../AppContext";
-import ListGroup from "../components/ListGroup";
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
@@ -15,20 +11,20 @@ export default () => {
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="Setting"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.pop()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />
       <View>
-        <SectionHeader />
-        <ListGroup
+        <FF.SectionHeader />
+        <FF.ListGroup
           items={[
             {
               label: "關於",
@@ -42,11 +38,11 @@ export default () => {
         />
 
         <View style={{ height: 50 }} />
-        <Button
+        <FF.Button
           title="登出"
           bgColor="darkblue"
           onPress={() => appCtx.logout()}
-        ></Button>
+        ></FF.Button>
       </View>
     </>
   );

@@ -7,7 +7,7 @@ import {
 } from "react-native-safe-area-context";
 import { Header } from "react-native-elements";
 
-const AppBar = ({ title, left, right, barColor }) => {
+export const AppBar = ({ title, left, right, barColor }) => {
   return (
     <Header
       backgroundColor={barColor ? barColor : "blue"}
@@ -46,5 +46,3 @@ const AppBar = ({ title, left, right, barColor }) => {
     // </SafeAreaView>
   );
 };
-
-export default AppBar;

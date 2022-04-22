@@ -6,29 +6,26 @@ import FlashMessage, {
   hideMessage,
 } from "react-native-flash-message";
 
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
-import BottomSheet from "react-native-bottomsheet";
-import Button from "../components/Button";
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="FlashMessage"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />
       <ScrollView style={{ padding: 14 }}>
-        <Button
+        <FF.Button
           title="Simple"
           bgColor="gray"
           onPress={() => {
@@ -39,7 +36,7 @@ export default () => {
             });
           }}
         />
-        <Button
+        <FF.Button
           title="floating"
           bgColor="lightskyblue"
           onPress={() => {
@@ -84,7 +81,7 @@ export default () => {
             });
           }}
         />
-        <Button
+        <FF.Button
           title="Hide"
           bgColor="lightgray"
           onPress={() => {

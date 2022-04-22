@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, StyleSheet, Text, View, Alert } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Icon from "../components/Icon";
+import { Icon } from "../components/Icon";
 const Tab = createBottomTabNavigator();
 
 const tabs = [

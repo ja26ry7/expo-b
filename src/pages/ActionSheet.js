@@ -1,29 +1,27 @@
 import React, { useCallback, useMemo, useRef } from "react";
 import { TouchableOpacity, ScrollView, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
 import BottomSheet from "react-native-bottomsheet";
-import Button from "../components/Button";
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="ActionSheet"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />
       <ScrollView style={{ padding: 14 }}>
-        <Button
+        <FF.Button
           title="ActionSheet"
           bgColor="darkblue"
           onPress={() => {
@@ -40,7 +38,7 @@ export default () => {
             );
           }}
         />
-        <Button
+        <FF.Button
           title="ShareBottomSheet"
           bgColor="darkblue"
           onPress={() => {

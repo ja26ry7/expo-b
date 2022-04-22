@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
 import { Avatar, Badge, withBadge } from "react-native-elements";
 import ImagePicker from "react-native-image-crop-picker";
 import BottomSheet from "react-native-bottomsheet";
+
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
@@ -67,14 +67,14 @@ export default () => {
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="個人檔案"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />

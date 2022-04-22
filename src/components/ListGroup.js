@@ -1,10 +1,10 @@
 import React from "react";
 import { View } from "react-native";
-import Divider from "../components/Divider";
-import SectionHeader from "../components/SectionHeader";
-import SubComponents from "../components/SubComponents";
+import Divider from "./Divider";
+import SectionHeader from "./SectionHeader";
+import SubComponents from "./SubComponents";
 
-const ListGroup = ({ items, header }) => (
+export const ListGroup = ({ items, header }) => (
   <View>
     <SectionHeader title={header} />
     <View style={{ backgroundColor: "white" }}>
@@ -27,5 +27,3 @@ const ListGroup = ({ items, header }) => (
     </View>
   </View>
 );
-
-export default ListGroup;

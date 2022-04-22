@@ -8,9 +8,9 @@ import {
   Alert,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
 import axios from "axios";
+
+import * as FF from "../components";
 
 const ListItem = ({ name, gender, location }) => {
   return (
@@ -45,14 +45,14 @@ export default () => {
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="List Page"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />

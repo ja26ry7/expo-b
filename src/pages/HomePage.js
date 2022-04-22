@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import {
-  Button,
   StyleSheet,
   Text,
   View,
@@ -8,15 +7,11 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import {
-  useNavigation,
-  useRoute,
-  useFocusEffect,
-} from "@react-navigation/native";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
-import { AppContext } from "../AppContext";
+import { useNavigation } from "@react-navigation/native";
 import Swiper from "react-native-swiper";
+
+import * as FF from "../components";
+import { AppContext } from "../AppContext";
 
 export default () => {
   const appCtx = useContext(AppContext);
@@ -24,7 +19,7 @@ export default () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <AppBar
+      <FF.AppBar
         title="Home"
         left={
           <TouchableOpacity
@@ -43,7 +38,11 @@ export default () => {
               ])
             }
           >
-            <Icon name="Ionicons/arrow-undo-outline" size={30} color="white" />
+            <FF.Icon
+              name="Ionicons/arrow-undo-outline"
+              size={30}
+              color="white"
+            />
           </TouchableOpacity>
         }
         right={
@@ -79,6 +78,7 @@ export default () => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   wrapper: {},
   slide1: {

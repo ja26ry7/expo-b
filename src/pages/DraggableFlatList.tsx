@@ -4,9 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import DraggableFlatList, {
   RenderItemParams,
 } from "react-native-draggable-flatlist";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
-import ACard from "../components/ACard";
+import * as FF from "../components";
 
 const NUM_ITEMS = 10;
 
@@ -64,14 +62,14 @@ export default () => {
 
   return (
     <>
-      <AppBar
+      <FF.AppBar
         title="可滑動清單"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon
+            <FF.Icon
               name="FontAwesome/angle-left"
               size={30}
               color="white"

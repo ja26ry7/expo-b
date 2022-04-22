@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import { TouchableOpacity, ScrollView, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import * as Progress from "react-native-progress";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
+
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
 
   return (
     <View style={{ alignItems: "center", flex: 1 }}>
-      <AppBar
+      <FF.AppBar
         title="Progress"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />

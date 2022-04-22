@@ -8,8 +8,8 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import Image from "react-native-image-progress";
 import * as Progress from "react-native-progress";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
+
+import * as FF from "../components";
 
 export default () => {
   const navigation = useNavigation();
@@ -29,14 +29,14 @@ export default () => {
 
   return (
     <View style={{ alignItems: "center", flex: 1 }}>
-      <AppBar
+      <FF.AppBar
         title="Image Progress"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon name="FontAwesome/angle-left" size={30} color="white" />
+            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
           </TouchableOpacity>
         }
       />

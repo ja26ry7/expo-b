@@ -1,9 +1,8 @@
 import React, { useCallback, useMemo, useRef } from "react";
 import { TouchableOpacity, ScrollView, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import AppBar from "../components/AppBar";
-import Icon from "../components/Icon";
-import Button from "../components/Button";
+import * as FF from "../components";
+
 import {
   BottomSheetModal,
   BottomSheetModalProvider,
@@ -26,14 +25,14 @@ export default () => {
 
   return (
     <BottomSheetModalProvider>
-      <AppBar
+      <FF.AppBar
         title="ActionSheet"
         left={
           <TouchableOpacity
             style={{ marginRight: 20 }}
             onPress={() => navigation.goBack()}
           >
-            <Icon
+            <FF.Icon
               name="FontAwesome/angle-left"
               size={30}
               color="white"
@@ -45,7 +44,7 @@ export default () => {
         barColor=""
       />
       <ScrollView style={{ padding: 14 }}>
-        <Button
+        <FF.Button
           title="BottomSheet"
           bgColor="darkblue"
           onPress={handlePresentModalPress}
