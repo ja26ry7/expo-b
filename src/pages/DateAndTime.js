@@ -9,17 +9,7 @@ export default () => {
   const navigation = useNavigation();
   return (
     <>
-      <FF.AppBar
-        title="日期與時間"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="日期與時間" left={<FF.BackButton />} />
       <ScrollView style={{ padding: 14 }}>
         <DateTimePicker
           containerStyle={{ marginVertical: 20 }}

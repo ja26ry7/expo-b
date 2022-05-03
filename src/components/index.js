@@ -1,5 +1,6 @@
 export { ACard } from "./ACard";
 export { AppBar } from "./AppBar";
+export { BackButton } from "./BackButton";
 export { Button } from "./Button";
 export { Divider } from "./Divider";
 export { Icon } from "./Icon";

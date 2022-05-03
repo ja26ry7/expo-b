@@ -4,7 +4,7 @@ import { View, Alert, Modal } from "react-native";
 import { AppContext } from "../AppContext";
 import { AppBar } from "./AppBar";
 import { BackButton } from "./BackButton";
-import { CTAButton } from "./CTAButton";
+import { Button } from "./Button";
 
 export const Password = () => {
   const appCtx = React.useContext(AppContext);
@@ -80,7 +80,7 @@ export const Password = () => {
 
         <View style={{ height: 50 }} />
 
-        <CTAButton
+        <Button
           title="送出"
           onPress={() => {
             if (newPassword === null || checkPassword === null) {

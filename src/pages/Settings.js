@@ -11,26 +11,20 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="Setting"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.pop()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Setting" left={<FF.BackButton />} />
       <View>
         <FF.SectionHeader />
+
         <FF.ListGroup
+          header={"joy"}
           items={[
             {
+              key: "1",
               label: "關於",
               onPress: () => navigation.navigate("introduction"),
             },
             {
+              key: "2",
               label: "系統資訊",
               onPress: () => navigation.navigate("systempage"),
             },
@@ -42,7 +36,7 @@ export default () => {
           title="登出"
           bgColor="darkblue"
           onPress={() => appCtx.logout()}
-        ></FF.Button>
+        />
       </View>
     </>
   );

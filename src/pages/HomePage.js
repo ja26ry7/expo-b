@@ -47,7 +47,7 @@ export default () => {
         }
         right={
           <TouchableOpacity onPress={() => navigation.navigate("settings")}>
-            <Icon name="FontAwesome/cog" size={30} color="white" />
+            <FF.Icon name="FontAwesome/cog" size={30} color="white" />
           </TouchableOpacity>
         }
       />

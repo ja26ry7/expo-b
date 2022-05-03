@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import Icon from "./Icon";
+import { Icon } from "./Icon";
 
 export const SubComponents = ({ title, onPress }) => {
   return (

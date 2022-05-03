@@ -35,17 +35,7 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="Toast"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Toast" left={<FF.BackButton />} />
       <ScrollView style={{ padding: 14 }}>
         <FF.Button
           title="Toast Top"

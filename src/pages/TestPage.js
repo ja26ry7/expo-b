@@ -11,17 +11,7 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="Test Page"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Test Page" left={<FF.BackButton />} />
       <ScrollView style={{ flex: 1, paddingHorizontal: 20 }}>
         <ButtonGroup
           onPress={(value) => setSelectedIndex(value)}

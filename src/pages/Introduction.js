@@ -67,17 +67,7 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="個人檔案"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="個人檔案" left={<FF.BackButton />} />
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <TouchableOpacity onPress={() => onAvatar()} style={{ margin: 5 }}>
           <Avatar

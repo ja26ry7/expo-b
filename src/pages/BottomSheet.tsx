@@ -27,19 +27,7 @@ export default () => {
     <BottomSheetModalProvider>
       <FF.AppBar
         title="ActionSheet"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon
-              name="FontAwesome/angle-left"
-              size={30}
-              color="white"
-              style={{}}
-            />
-          </TouchableOpacity>
-        }
+        left={<FF.BackButton />}
         right={{}}
         barColor=""
       />

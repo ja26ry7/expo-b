@@ -30,17 +30,7 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="系統資訊"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="系統資訊" left={<FF.BackButton />} />
       <View style={{ flex: 1, alignItems: "center", marginTop: 30 }}>
         <ListName title="手機品牌" news={brand} />
         <FF.Divider style={{ backgroundColor: "#D0D0D0" }} />

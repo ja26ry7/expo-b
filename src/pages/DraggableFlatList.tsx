@@ -64,19 +64,7 @@ export default () => {
     <>
       <FF.AppBar
         title="可滑動清單"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon
-              name="FontAwesome/angle-left"
-              size={30}
-              color="white"
-              style={{}}
-            />
-          </TouchableOpacity>
-        }
+        left={<FF.BackButton />}
         right={{}}
         barColor=""
       />

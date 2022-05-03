@@ -31,17 +31,7 @@ export default () => {
 
   return (
     <View style={{ alignItems: "center", flex: 1 }}>
-      <FF.AppBar
-        title="Mask and SVG"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Mask and SVG" left={<FF.BackButton />} />
       <View style={{ padding: 20 }}>
         {/* <ItemEditNickname
           nicknameValue={formik.values.nickname}

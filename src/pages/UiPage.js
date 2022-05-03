@@ -28,17 +28,7 @@ export default () => {
 
   return (
     <PaperProvider>
-      <FF.AppBar
-        title="Uipage"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Uipage" left={<FF.BackButton />} />
       <TabView
         navigationState={{ index, routes }}
         onIndexChange={setIndex}
@@ -66,8 +56,9 @@ const UiTab2 = () => {
   const [searchText, setSearchText] = React.useState("");
   const [searchText1, setSearchText1] = React.useState("");
   const navigation = useNavigation();
+
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <SearchBar
         placeholder="Type Here..."
         onChangeText={(value) => setSearchText(value)}
@@ -80,7 +71,7 @@ const UiTab2 = () => {
         value={searchText1}
       />
       {/* <SectionHeader title='one' /> */}
-      {/* <ListGroup
+      <FF.ListGroup
         header="一般"
         items={[
           {
@@ -94,9 +85,11 @@ const UiTab2 = () => {
             onPress: () => navigation.navigate("dateandtime"),
           },
         ]}
-      /> */}
-      <FF.ACard height={200} text="Happy New Year!" />
-      <FF.ACard text="新年快樂！" />
-    </ScrollView>
+      />
+      <ScrollView>
+        <FF.ACard height={200} text="Happy New Year!" />
+        <FF.ACard text="新年快樂！" />
+      </ScrollView>
+    </View>
   );
 };

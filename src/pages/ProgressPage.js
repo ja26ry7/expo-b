@@ -10,17 +10,7 @@ export default () => {
 
   return (
     <View style={{ alignItems: "center", flex: 1 }}>
-      <FF.AppBar
-        title="Progress"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Progress" left={<FF.BackButton />} />
       <ScrollView style={{ padding: 20 }}>
         <Text style={{ paddingVertical: 10 }}>Bar</Text>
         <Progress.Bar progress={0.3} width={200} indeterminate={true} />

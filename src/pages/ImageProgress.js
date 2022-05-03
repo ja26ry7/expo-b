@@ -29,17 +29,7 @@ export default () => {
 
   return (
     <View style={{ alignItems: "center", flex: 1 }}>
-      <FF.AppBar
-        title="Image Progress"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="Image Progress" left={<FF.BackButton />} />
       <ScrollView
         style={{ padding: 20 }}
         refreshControl={

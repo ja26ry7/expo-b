@@ -13,17 +13,7 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="FlashMessage"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="FlashMessage" left={<FF.BackButton />} />
       <ScrollView style={{ padding: 14 }}>
         <FF.Button
           title="Simple"
@@ -48,7 +38,7 @@ export default () => {
             });
           }}
         />
-        <Button
+        <FF.Button
           title="Success"
           bgColor="green"
           onPress={() => {
@@ -59,7 +49,7 @@ export default () => {
             });
           }}
         />
-        <Button
+        <FF.Button
           title="Warning"
           bgColor="orange"
           onPress={() => {
@@ -70,7 +60,7 @@ export default () => {
             });
           }}
         />
-        <Button
+        <FF.Button
           title="Danger"
           bgColor="red"
           onPress={() => {

@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
-import Divider from "./Divider";
-import SectionHeader from "./SectionHeader";
-import SubComponents from "./SubComponents";
+import { Divider } from "./Divider";
+import { SectionHeader } from "./SectionHeader";
+import { SubComponents } from "./SubComponents";
 
 export const ListGroup = ({ items, header }) => (
   <View>

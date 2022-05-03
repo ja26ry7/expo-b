@@ -45,17 +45,7 @@ export default () => {
 
   return (
     <>
-      <FF.AppBar
-        title="List Page"
-        left={
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() => navigation.goBack()}
-          >
-            <FF.Icon name="FontAwesome/angle-left" size={30} color="white" />
-          </TouchableOpacity>
-        }
-      />
+      <FF.AppBar title="List Page" left={<FF.BackButton />} />
       <FlatList
         keyExtractor={(item, index) => index.toString()}
         data={users}
